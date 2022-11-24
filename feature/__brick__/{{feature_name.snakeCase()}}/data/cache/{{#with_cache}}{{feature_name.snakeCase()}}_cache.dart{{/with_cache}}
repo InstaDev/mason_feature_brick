@@ -1,0 +1,7 @@
+import 'package:{{project_name.snakeCase()}}/src/features/{{feature_name.snakeCase()}}/data/model/{{feature_name.snakeCase()}}_dto.dart';
+
+abstract class {{feature_name.pascalCase()}}Cache {
+  List<{{feature_name.pascalCase()}}DTO> read{{feature_name.pascalCase()}}();
+  Future<void> write{{feature_name.pascalCase()}}(List<{{feature_name.pascalCase()}}DTO> {{feature_name.camelCase()}});
+  Future<void> clear();
+}

@@ -1,0 +1,6 @@
+import 'package:chopper/chopper.dart';
+import 'package:{{project_name.snakeCase()}}/src/features/{{feature_name.snakeCase()}}/data/model/{{feature_name.snakeCase()}}_dto.dart';
+
+abstract class {{feature_name.pascalCase()}}Service {
+  Future<Response<{{> entity_for_service_response }}>> get{{feature_name.pascalCase()}}();
+}

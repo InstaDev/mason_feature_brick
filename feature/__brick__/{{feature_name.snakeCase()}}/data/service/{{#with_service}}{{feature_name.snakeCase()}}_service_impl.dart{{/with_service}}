@@ -1,0 +1,18 @@
+import 'package:chopper/chopper.dart';
+import 'package:{{project_name.snakeCase()}}/src/features/{{feature_name.snakeCase()}}/data/model/{{feature_name.snakeCase()}}_dto.dart';
+import 'package:{{project_name.snakeCase()}}/src/features/{{feature_name.snakeCase()}}/data/service/{{feature_name.snakeCase()}}_service.dart';
+
+part '{{feature_name.snakeCase()}}_service_impl.chopper.dart';
+
+@ChopperApi()
+abstract class {{feature_name.pascalCase()}}ServiceImpl extends ChopperService
+    implements  {{feature_name.pascalCase()}}Service {
+   {{feature_name.pascalCase()}}ServiceImpl();
+
+  factory {{feature_name.pascalCase()}}ServiceImpl.create({ChopperClient? client}) =>
+      _${{feature_name.pascalCase()}}ServiceImpl(client);
+
+  @override
+  @Get(path: '/{{feature_name.snakeCase()}}')
+  Future<Response<{{> entity_for_service_response }}>> get{{feature_name.pascalCase()}}();
+}

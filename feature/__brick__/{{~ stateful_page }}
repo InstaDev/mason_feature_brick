@@ -1,0 +1,39 @@
+import 'package:flutter/material.dart';
+{{#consumer}}
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+{{/consumer}}
+
+class {{feature_name.pascalCase()}}Page extends {{#consumer}}Consumer{{/consumer}}StatefulWidget {
+    const {{feature_name.pascalCase()}}Page({
+    super.key,
+
+  });
+
+  @override
+  {{#consumer}}Consumer{{/consumer}}State<{{feature_name.pascalCase()}}Page> createState() => _{{feature_name.pascalCase()}}PageState();
+
+}
+
+class _{{feature_name.pascalCase()}}PageState extends {{#consumer}}Consumer{{/consumer}}State<{{feature_name.pascalCase()}}Page> {
+  
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: SizedBox(),
+      ),
+    );
+  }
+
+
+}

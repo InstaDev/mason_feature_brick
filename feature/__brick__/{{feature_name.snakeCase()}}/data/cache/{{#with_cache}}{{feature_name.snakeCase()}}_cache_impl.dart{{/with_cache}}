@@ -1,0 +1,33 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hive/hive.dart';
+import 'package:{{project_name.snakeCase()}}/src/features/{{feature_name.snakeCase()}}/data/cache/{{feature_name.snakeCase()}}_cache.dart';
+import 'package:{{project_name.snakeCase()}}/src/features/{{feature_name.snakeCase()}}/data/model/{{feature_name.snakeCase()}}_dto.dart';
+
+
+final {{feature_name.camelCase()}}CacheProvider = Provider<{{feature_name.pascalCase()}}Cache>((ref) {
+  return {{feature_name.pascalCase()}}CacheImpl(
+    box: Hive.box('{{feature_name.snakeCase()}}'),
+  );
+});
+
+class {{feature_name.pascalCase()}}CacheImpl implements {{feature_name.pascalCase()}}Cache {
+  {{feature_name.pascalCase()}}CacheImpl({
+    required this.box,
+  });
+
+  final Box<{{feature_name.pascalCase()}}DTO> box;
+
+  @override
+  List<{{feature_name.pascalCase()}}DTO> read{{feature_name.pascalCase()}}() => box.values.toList();
+
+  @override
+  Future<void> clear() => box.clear();
+
+  @override
+  Future<void> write{{feature_name.pascalCase()}}(List<{{feature_name.pascalCase()}}DTO> {{feature_name.camelCase()}}) async {
+    await box.clear();
+    for (var i = 0; i < {{feature_name.camelCase()}}.length; i++) {
+      box.put(i, {{feature_name.camelCase()}}[i]);
+    }
+  }
+}

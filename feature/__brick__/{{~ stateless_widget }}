@@ -1,0 +1,16 @@
+import 'package:flutter/material.dart';
+{{#consumer_widget}}
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+{{/consumer_widget}}
+
+class {{feature_name.pascalCase()}}Widget extends {{#consumer_widget}}Consumer{{/consumer_widget}}{{^consumer_widget}}Stateless{{/consumer_widget}}Widget {
+    const {{feature_name.pascalCase()}}Widget({
+    super.key,
+
+  });
+
+  @override
+  Widget build(BuildContext context{{#consumer_widget}}, WidgetRef ref{{/consumer_widget}}) {
+    return SizedBox();
+  }
+}

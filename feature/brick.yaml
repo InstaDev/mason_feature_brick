@@ -1,0 +1,88 @@
+name: feature
+description: A new brick created with the Mason CLI.
+
+# The following defines the version and build number for your brick.
+# A version number is three numbers separated by dots, like 1.2.34
+# followed by an optional build number (separated by a +).
+version: 0.1.0+1
+
+# The following defines the environment for the current brick.
+# It includes the version of mason that the brick requires.
+environment:
+  mason: ">=0.1.0-dev.26 <0.1.0"
+
+# Variables specify dynamic values that your brick depends on.
+# Zero or more variables can be specified for a given brick.
+# Each variable has:
+#  * a type (string, number, boolean, enum, or array)
+#  * an optional short description
+#  * an optional default value
+#  * an optional list of default values (array only)
+#  * an optional prompt phrase used when asking for the variable
+#  * a list of values (enums only)
+vars:
+  project_name:
+    type: string
+    description: Project name
+    default: project
+    prompt: What is your project name?
+
+  feature_name:
+    type: string
+    description: Feature name
+    default: feature
+    prompt: What is your feature?
+
+  stateful:
+    type: boolean
+    description: Whether the page widget is stateful or stateless. True if stateful, false otherwise.
+    default: false
+    prompt: Is page widget stateful or stateless? True if stateful, false otherwise.
+
+  stateful_widget:
+    type: boolean
+    description: Whether the additional widget is stateful or stateless. True if stateful, false otherwise.
+    default: false
+    prompt: Is widget stateful or stateless? True if stateful, false otherwise.
+
+  consumer:
+    type: boolean
+    description: Whether the page widget use providers.
+    default: false
+    prompt: Is widget using providers?
+
+  consumer_widget:
+    type: boolean
+    description: Whether the additional widget use providers.
+    default: false
+    prompt: Is widget using providers?
+
+  with_service:
+    type: boolean
+    description: Whether the chopper is used.
+    default: true
+    prompt: Is the chopper in use?
+
+  with_cache:
+    type: boolean
+    description: Whether the hive is used.
+    default: true
+    prompt: Is the hive in use?
+  
+  hive_type_id:
+    type: number
+    description: Hive type id.
+    default: 0
+    prompt: What is the next hive type id?
+
+  with_repository_stream:
+    type: boolean
+    description: Whether the repository gives access to the data stream.
+    default: true
+    prompt: Is the data stream in use?
+
+  single_entity_in_response:
+    type: boolean
+    description: Methods should return a single entity instead of a list.
+    default: false
+    prompt: Should methods return a single entity instead of list?

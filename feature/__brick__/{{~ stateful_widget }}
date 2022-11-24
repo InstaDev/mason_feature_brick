@@ -1,0 +1,35 @@
+import 'package:flutter/material.dart';
+{{#consumer_widget}}
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+{{/consumer_widget}}
+
+class {{feature_name.pascalCase()}}Widget extends {{#consumer_widget}}Consumer{{/consumer_widget}}StatefulWidget {
+    const {{feature_name.pascalCase()}}Widget({
+    super.key,
+
+  });
+
+  @override
+  {{#consumer_widget}}Consumer{{/consumer_widget}}State<{{feature_name.pascalCase()}}Widget> createState() => _{{feature_name.pascalCase()}}WidgetState();
+
+}
+
+class _{{feature_name.pascalCase()}}WidgetState extends {{#consumer_widget}}Consumer{{/consumer_widget}}State<{{feature_name.pascalCase()}}Widget> {
+  
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox();
+  }
+
+
+}

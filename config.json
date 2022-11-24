@@ -1,0 +1,13 @@
+{
+    "project_name": "my project",
+    "feature_name": "test feature",
+    "consumer": true,
+    "consumer_widget": true,
+    "stateful": true,
+    "stateful_widget": false,
+    "with_service": true,
+    "with_cache": true,
+    "hive_type_id": 0,
+    "with_repository_stream": true,
+    "single_entity_in_response": false
+}
